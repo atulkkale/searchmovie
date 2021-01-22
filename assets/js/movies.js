@@ -21,21 +21,23 @@ var allmovies = [one,two,three,four,five,six,seven,eight,nine,ten];
 
 for(var i=0;i<=9;i++){
   document.write(i+1 + "&nbsp;&nbsp;&nbsp;&nbsp;" + allmovies[i].mname + "&nbsp;&nbsp;&nbsp;&nbsp;" + allmovies[i].releasedate + "&nbsp;&nbsp;&nbsp;&nbsp;" + allmovies[i].actorname + "&nbsp;&nbsp;&nbsp;&nbsp;" + allmovies[i].producername);
-  document.write("<br>");
+  document.write("<br><br>");
 }
 
 function search(){
   var searchkey = document.getElementById("input").value;
   searchkey = searchkey.toLowerCase();
   var textarea = document.getElementById("textarea");
+  var found = 0;
   
   for(var i=0;i<=9;i++){
     if(searchkey == allmovies[i].mname || searchkey == allmovies[i].actorname){
       textarea.value = [allmovies[i].mname,allmovies[i].releasedate,allmovies[i].actorname,allmovies[i].producername];
+      found += 1;
     }
-    else{
-      textarea.value = "Nothing has found... Please search again!";
-    }
+  }
+  if(found == 0){
+    textarea.value = "Nothing has found... Please search again!";
   }
   
 }
