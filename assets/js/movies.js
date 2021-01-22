@@ -34,7 +34,7 @@ function search(){
       textarea.value = [allmovies[i].mname,allmovies[i].releasedate,allmovies[i].actorname,allmovies[i].producername];
     }
     else{
-      textarea.value = "Nothing has found... Please search again";
+      textarea.value = "Nothing has found... Please search again!";
     }
   }
   
